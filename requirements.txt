@@ -21,4 +21,4 @@ selenium>=3.141.0
 setuptools_rust>=0.11.6
 six>=1.11.0
 urllib3>=1.24.1
-webdriverdownloader>=1.1.0.3
+webdriverdownloader @ git+https://github.com/polythilene/webdriverdownloader.git@570943348089ed654f0859997cf8a83f3ff2bd18
