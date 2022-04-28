@@ -172,7 +172,7 @@ def check_browser(browser, logfolder, logger, proxy_address):
     # check connection status
     try:
         logger.info("-- Connection Checklist [1/2] (Internet Connection Status)")
-        browser.get("view-source:https://freegeoip.app/json")
+        browser.get("view-source:http://ip-api.com/json/")
         pre = browser.find_element(By.TAG_NAME, "pre").text
         current_ip_info = json.loads(pre)
         if (
@@ -192,9 +192,12 @@ def check_browser(browser, logfolder, logger, proxy_address):
             logger.info("- Internet Connection Status: ok")
             logger.info(
                 '- Current IP is "{}" and it\'s from "{}/{}"'.format(
-                    current_ip_info["ip"],
-                    current_ip_info["country_name"],
-                    current_ip_info["country_code"],
+                    # current_ip_info["ip"],
+                    # current_ip_info["country_name"],
+                    # current_ip_info["country_code"],
+                    current_ip_info["query"],
+                    current_ip_info["country"],
+                    current_ip_info["countryCode"],
                 )
             )
             update_activity(
